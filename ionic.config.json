@@ -1,0 +1,7 @@
+{
+  "name": "music_go",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
