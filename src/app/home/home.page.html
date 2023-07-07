@@ -1,19 +1,32 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+<ion-header>
+  
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Hola Mundo</strong>
-  </div>
+<ion-content>
+    <swiper-container [initialSlide]="0">
+      <swiper-slide>
+        <h1>Cancion 1</h1>
+        <h3>Nombre Artista</h3>
+        <img src="https://img.freepik.com/free-psd/club-dj-party-flyer-social-media-post_505751-3658.jpg?w=900&t=st=1688692730~exp=1688693330~hmac=d909b0d1421516c2a6ddde41164b45f2385b36bd03e974fe26d371ae7f45d116" alt="">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sapiente vel similique corrupti repellendus veniam ducimus inventore tempore quis iure, laudantium nam, magnam ullam praesentium culpa, quas deleniti asperiores ipsa.</p>
+        <div class="slide-icon"> 
+          <ion-icon name="play-back-outline"></ion-icon>
+          <ion-icon name="play-circle-outline"></ion-icon>
+          <ion-icon name="play-forward-outline"></ion-icon>
+        </div>
+        
+      </swiper-slide>
+      <swiper-slide>
+        <h1>Cancion 2</h1>
+        <h3>Nombre Artista</h3>
+        <img src="https://img.freepik.com/premium-psd/club-dj-party-flyer-social-media-post-premium_665615-4.jpg?w=900" alt="">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sapiente vel similique corrupti repellendus veniam ducimus inventore tempore quis iure, laudantium nam, magnam ullam praesentium culpa, quas deleniti asperiores ipsa.</p>
+        <div class="slide-icon"> 
+          <ion-icon name="play-back-outline"></ion-icon>
+          <ion-icon name="play-circle-outline"></ion-icon>
+          <ion-icon name="play-forward-outline"></ion-icon>
+        </div>    
+      </swiper-slide>
+      
+    </swiper-container>
 </ion-content>
