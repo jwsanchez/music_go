@@ -1,13 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>intro</ion-title>
-  </ion-toolbar>
+<ion-header>
+
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">intro</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <swiper-container [initialSlide]="0" [speed]="900">
+    <swiper-slide *ngFor="let slide of slides">
+      <h1 class="title">{{slide.title}}</h1>
+      <h3 class="title">{{slide.art}}</h3>
+      <img
+        src="{{slide.img}}"
+        alt="" class="main-music">
+      <p>{{slide.description}}</p>
+      <ion-progress-bar value={{progress}}></ion-progress-bar>
+      <div class="slide-icon">
+        <ion-icon class="controls" name="play-back-outline"></ion-icon>
+        <ion-icon id="play-buttom" name="play-circle-outline"></ion-icon>
+        <ion-icon class="controls" name="play-forward-outline"></ion-icon>
+      </div>
+    </swiper-slide>
+
+  </swiper-container>
 </ion-content>
