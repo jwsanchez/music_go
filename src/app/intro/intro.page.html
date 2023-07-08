@@ -3,6 +3,7 @@
 </ion-header>
 
 <ion-content>
+  <ion-icon name="chevron-back-outline" class="close-icon" (click)="finish()"></ion-icon>
   <swiper-container [initialSlide]="0" [speed]="900">
     <swiper-slide *ngFor="let slide of slides">
       <h1 class="title">{{slide.title}}</h1>

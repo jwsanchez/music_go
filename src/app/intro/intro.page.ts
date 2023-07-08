@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router'
 @Component({
   selector: 'app-intro',
   templateUrl: './intro.page.html',
@@ -39,7 +39,7 @@ export class IntroPage implements OnInit {
       img:"https://img.freepik.com/free-psd/party-social-media-instagram-post-template_505751-3010.jpg?w=900&t=st=1688772976~exp=1688773576~hmac=765b239b4460263f9f4e530f82539b9b8b88efc27c8cb9472d05e51e62f93bcc"
     }
   ]
-  constructor() { 
+  constructor(private router: Router) { 
     setInterval(() => {
       this.progress += 0.001;
       // Reset the progress bar when it reaches 100%
@@ -50,9 +50,14 @@ export class IntroPage implements OnInit {
         }, 1000);
       }
     }, 50);
+
   }
 
   ngOnInit() {
+  }
+
+  finish(){
+    this.router.navigateByUrl("/home")
   }
 
 }
