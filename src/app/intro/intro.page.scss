@@ -1,14 +1,14 @@
 .title{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: var(--family-card);
     text-align: center;
   }
   
   h3{
-    font-size: medium;
+    font-size: var(--art-card);
   }
   
   p{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: var(--description-font-card);
     padding: 1%;
     margin: 3%;
     text-align: justify;
@@ -27,7 +27,8 @@
   }
   
   ion-content{
-    --background:#red;
+    --background: rgb(27, 26, 26);
+    --ion-font-family: 'Gill Sans';
   }
   
   .main-music{
@@ -39,7 +40,12 @@
 
   .close-icon{
     font-size: 40px;
-    color: red;
+    color: var(--ion-color-danger);
     display: block;
     margin-left: auto;
   }
+
+  ion-progress-bar{
+    background-color: var(--ion-color-dark-tint);
+  }
+
