@@ -27,7 +27,8 @@ export class LoginPage implements OnInit {
           Validators.compose(
             [
               Validators.required,
-              Validators.email
+              Validators.email,
+              Validators.pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9_.+-]+.[a-zA-Z0-9.-]+$")
             ]
           )
         ),
@@ -36,7 +37,8 @@ export class LoginPage implements OnInit {
           Validators.compose(
             [
               Validators.required,
-              Validators.minLength(6)
+              Validators.minLength(6),
+              Validators.maxLength(20)
             ]
           )
         )

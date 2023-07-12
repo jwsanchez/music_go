@@ -1,36 +1,47 @@
-<ion-header [translucent]="true">
+<ion-header  class="ion-no-border" [translucent]="true">
   <ion-toolbar>
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<form [formGroup]="loginForm">
+  <form [formGroup]="loginForm">
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <ion-col class="ion-margin">
+          <ion-item>
+            <ion-input label="Email" labelPlacement="floating" placeholder="name@example.com"
+              formControlName="email"></ion-input>
+          </ion-item>
+        </ion-col>
 
-  <ion-item>
-    <ion-input label="Email" labelPlacement="floating"  placeholder="name@example.com" formControlName="email"></ion-input>
-  </ion-item>
-  <div class="validation-errors">
-    <ng-container *ngFor="let validation of validation_messages.email" >
-      <div *ngIf="(
+      </ion-row>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.email">
+          <div *ngIf="(
         loginForm.get('email')?.hasError(validation.type) && 
         loginForm.get('email')?.dirty)
       ">
-        {{validation.message}}
-      </div>
-    </ng-container>
-    <ng-container *ngFor="let validation of validation_messages.password" >
-      <div *ngIf="(
+            {{validation.message}}
+          </div>
+        </ng-container>
+        <ng-container *ngFor="let validation of validation_messages.password">
+          <div *ngIf="(
         loginForm.get('password')?.hasError(validation.type) &&
         loginForm.get('password')?.dirty)
       ">
-        {{validation.message}}
+            {{validation.message}}
+          </div>
+        </ng-container>
       </div>
-    </ng-container>
-  </div>
-
-  <ion-item>
-    <ion-input label="Password" labelPlacement="floating"  placeholder="*********" formControlName="password"></ion-input>
-  </ion-item>
-</form>
+      <ion-row class="ion-align-items-center">
+        <ion-col class="ion-margin">
+          <ion-item>
+            <ion-input label="Password" labelPlacement="floating" placeholder="*********" formControlName="password"
+              type="password"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>
