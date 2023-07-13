@@ -50,4 +50,8 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
+  loginUser(credentials: any){
+    console.log(credentials);
+  }
+
 }
