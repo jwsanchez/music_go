@@ -17,7 +17,7 @@ export class LoginGuard implements CanActivate {
     if(isUserLoggedIn){
       return true;
     }else{
-      //this.navCtrl.navigateForward("/login");
+      this.navCtrl.navigateForward("/login");
       return false;
     }
   }
