@@ -1,4 +1,4 @@
-<ion-header  class="ion-no-border" [translucent]="true">
+<ion-header class="ion-no-border" [translucent]="true">
   <ion-toolbar>
     <ion-title>Login</ion-title>
   </ion-toolbar>
@@ -42,11 +42,19 @@
           </ion-item>
         </ion-col>
       </ion-row>
-      <ion-row>
-        <ion-col class="ion-margin">
-          <ion-button expand="full" color="success" type="submit" [disabled]="!loginForm.valid">Ingresar</ion-button>
-        </ion-col>
-      </ion-row>
     </ion-grid>
   </form>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-margin">
+        <ion-button expand="full" color="success" type="submit" [disabled]="!loginForm.valid">Ingresar</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="ion-margin">
+        <ion-button expand="full" color="secondary" type="submit" (click)="goToRegister()">Registrate</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
