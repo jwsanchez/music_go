@@ -5,5 +5,23 @@
 </ion-header>
 
 <ion-content>
-  
+  <form [formGroup]="registerForm">
+
+    <ion-item>
+      <ion-input label="Email" labelPlacement="floating" placeholder="name@example.com" formControlName="email">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Password" labelPlacement="floating" placeholder="*******" formControlName="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Name" labelPlacement="floating" placeholder="Nombre" formControlName="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Last Name" labelPlacement="floating" placeholder="Apellido" formControlName="last_name"></ion-input>
+    </ion-item>
+  </form>
 </ion-content>
