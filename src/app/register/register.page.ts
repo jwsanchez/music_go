@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
+import { AuthenticateService } from '../services/authenticate.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +11,9 @@ import { FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
 export class RegisterPage implements OnInit {
   registerForm: FormGroup;
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private authService: AuthenticateService,
+    private navCtrl: NavController
   ) {
     this.registerForm = this.formBuilder.group(
       {
@@ -36,7 +40,6 @@ export class RegisterPage implements OnInit {
           Validators.compose(
             [
               Validators.required,
-              Validators.minLength(6)
             ]
           )
         ),
@@ -45,7 +48,6 @@ export class RegisterPage implements OnInit {
           Validators.compose(
             [
               Validators.required,
-              Validators.minLength(6)
             ]
           )
         )
@@ -55,4 +57,16 @@ export class RegisterPage implements OnInit {
 
   ngOnInit() {
   }
+
+  goToLogin(){
+    //Agregar un back a login
+  }
+
+  registerUser(userData:any){
+    console.log(userData);
+    this.authService.registerUser(userData).then(() => {
+      this.navCtrl.navigateBack("/login");
+    })
+  }
+
 }

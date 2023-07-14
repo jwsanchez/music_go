@@ -1,11 +1,16 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons>
+      <ion-button (click)="goToLogin()">
+        Atras
+      </ion-button>
+    </ion-buttons>
     <ion-title>Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="registerForm">
+  <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)">
 
     <ion-item>
       <ion-input label="Email" labelPlacement="floating" placeholder="name@example.com" formControlName="email">
@@ -13,7 +18,8 @@
     </ion-item>
 
     <ion-item>
-      <ion-input label="Password" labelPlacement="floating" placeholder="*******" formControlName="password"></ion-input>
+      <ion-input label="Password" labelPlacement="floating" placeholder="*******"
+        formControlName="password"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -21,7 +27,14 @@
     </ion-item>
 
     <ion-item>
-      <ion-input label="Last Name" labelPlacement="floating" placeholder="Apellido" formControlName="last_name"></ion-input>
+      <ion-input label="Last Name" labelPlacement="floating" placeholder="Apellido"
+        formControlName="last_name"></ion-input>
     </ion-item>
+
+    <ion-button type="submit" [disabled]="!registerForm.valid">
+      Registrarse
+    </ion-button>
+
+
   </form>
 </ion-content>
