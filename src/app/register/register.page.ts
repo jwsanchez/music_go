@@ -59,7 +59,7 @@ export class RegisterPage implements OnInit {
   }
 
   goToLogin(){
-    //Agregar un back a login
+    this.navCtrl.navigateBack("/login");
   }
 
   registerUser(userData:any){

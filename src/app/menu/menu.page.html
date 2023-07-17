@@ -11,13 +11,16 @@
       </ion-toolbar>
     </ion-header>
     <ion-content>
-
+      <ion-item (click)="tutorial()">
+        <ion-icon name="easel-outline"></ion-icon>
+         <span>Tutorial de uso</span> 
+      </ion-item>
 
     </ion-content>
     <ion-footer>
       <ion-item (click)="logout()">
         <ion-icon name="log-in-outline"></ion-icon>
-        Cerrar Sesion
+        <span>Cerrar Sesion</span> 
       </ion-item>
     </ion-footer>
   </ion-menu>

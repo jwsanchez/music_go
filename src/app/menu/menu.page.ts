@@ -18,6 +18,10 @@ export class MenuPage implements OnInit {
     this.menu.close();
   }
 
+  tutorial(){
+    this.navCtrl.navigateForward('/intro');
+  }
+
   logout(){
     this.storage.set("isUserLoggedIn", false);
     this.navCtrl.navigateRoot('/login');
