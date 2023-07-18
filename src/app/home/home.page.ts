@@ -19,8 +19,9 @@ export class HomePage {
       console.log("", this.artists);
     })
 
-     this.localArtists = this.musicService.getArtistsFromJson();
-     console.log(this.localArtists.artists);
+   this.localArtists = this.musicService.getArtistsFromJson();
+   this.localArtists = this.localArtists.artists;
+     console.log(this.localArtists);
   }
 }
 

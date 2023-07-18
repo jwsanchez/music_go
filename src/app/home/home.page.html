@@ -6,7 +6,7 @@
     </ion-toolbar>
   </ion-header>
   <ion-content>
-    <h1>Artistas</h1>
+    <h2>Artistas</h2>
     <swiper-container [initialSlide]="0" [slidesPerView]="4" 
     *ngIf="artists?.length"
     >
@@ -15,6 +15,18 @@
         <ion-avatar>
           <img src="{{artist.image}}" />
           <span>{{artist.name}}</span>
+        </ion-avatar>
+      </swiper-slide>
+    </swiper-container>
+
+
+    <h2>Top Artistas</h2>
+    <swiper-container [initialSlide]="0" [slidesPerView]="4">
+    
+      <swiper-slide *ngFor="let localArtist of localArtists">
+        <ion-avatar>
+          <img src="{{localArtist['images'][1]['url']}}" />
+          <span>{{localArtist.name}}</span>
         </ion-avatar>
       </swiper-slide>
     </swiper-container>
