@@ -7,7 +7,10 @@
   </ion-header>
   <ion-content>
     <h1>Artistas</h1>
-    <swiper-container [initialSlide]="0" [slidesPerView]="4">
+    <swiper-container [initialSlide]="0" [slidesPerView]="4" 
+    *ngIf="artists?.length"
+    >
+      
       <swiper-slide *ngFor="let artist of artists">
         <ion-avatar>
           <img src="{{artist.image}}" />
