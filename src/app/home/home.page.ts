@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MusicService } from '../services/music.service';
+
 
 @Component({
   selector: 'app-home',
@@ -6,16 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  artists = [
-    {},
-    {},
-    {},
-    {},
-    {},
-    {}
-  ]
-  constructor() {
+  artists: any;
+  constructor(private musicService:MusicService) {
     
+  }
+  ionViewDidEnter(){
+    this.musicService.getArtists().then(listArtists => {
+      this.artists = listArtists;
+      console.log("", this.artists);
+    })
   }
 }
 
