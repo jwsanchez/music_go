@@ -9,6 +9,7 @@ import { MusicService } from '../services/music.service';
 })
 export class HomePage {
   artists: any;
+  localArtists: any;
   constructor(private musicService:MusicService) {
     
   }
@@ -17,6 +18,9 @@ export class HomePage {
       this.artists = listArtists;
       console.log("", this.artists);
     })
+
+     this.localArtists = this.musicService.getArtistsFromJson();
+     console.log(this.localArtists.artists);
   }
 }
 
