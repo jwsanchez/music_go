@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MusicService } from '../services/music.service';
-
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +10,10 @@ import { MusicService } from '../services/music.service';
 export class HomePage {
   artists: any;
   localArtists: any;
-  constructor(private musicService:MusicService) {
+  constructor(
+    private musicService:MusicService,
+    private modalController:ModalController
+    ) {
     
   }
   ionViewDidEnter(){
