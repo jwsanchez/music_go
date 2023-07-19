@@ -11,6 +11,9 @@ import { SongsModalPage } from '../songs-modal/songs-modal.page';
 export class HomePage {
   artists: any;
   localArtists: any;
+  song = {
+    name: ''
+  }
   constructor(
     private musicService:MusicService,
     private modalController:ModalController
@@ -20,18 +23,18 @@ export class HomePage {
   ionViewDidEnter(){
     this.musicService.getArtists().then(listArtists => {
       this.artists = listArtists;
-      console.log("", this.artists);
+      //console.log("", this.artists);
     })
 
    this.localArtists = this.musicService.getArtistsFromJson();
    this.localArtists = this.localArtists.artists;
-     console.log(this.localArtists);
+     //console.log(this.localArtists);
   }
 
   async showSongs(artist:any){
-    console.log(artist);
+    //console.log(artist);
     const songs = await this.musicService.getArtistsTracks(artist.id);
-    console.log(songs);
+    //console.log(songs);
     const modal = await this.modalController.create(
       {
         component:SongsModalPage,
@@ -41,8 +44,13 @@ export class HomePage {
         }
       }
     );
+    modal.onDidDismiss().then(dataReturned =>{
+      this.song = dataReturned.data;
+    })
     return await modal.present();
   }
+
+
 }
 
 
