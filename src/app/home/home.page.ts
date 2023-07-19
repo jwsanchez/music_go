@@ -24,8 +24,10 @@ export class HomePage {
      console.log(this.localArtists);
   }
 
-  showSongs(artist:any){
+  async showSongs(artist:any){
     console.log(artist);
+    const songs = await this.musicService.getArtistsTracks(artist.id);
+    console.log(songs);
   }
 }
 

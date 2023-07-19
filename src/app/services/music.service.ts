@@ -20,7 +20,7 @@ urlServer = "https://musicback.fly.dev";
   }
 
   getArtistsTracks(artist_id: number){
-    return fetch(`${this.urlServer}/tracks/artists/${artist_id}`).then(
+    return fetch(`${this.urlServer}/tracks/artist/${artist_id}`).then(
       response => response.json()
     );
   }
