@@ -12,7 +12,7 @@
     >
       
       <swiper-slide *ngFor="let artist of artists">
-        <ion-avatar>
+        <ion-avatar (click)="showSongs(artist)">
           <img src="{{artist.image}}" />
           <span>{{artist.name}}</span>
         </ion-avatar>

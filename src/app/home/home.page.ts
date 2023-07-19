@@ -23,6 +23,10 @@ export class HomePage {
    this.localArtists = this.localArtists.artists;
      console.log(this.localArtists);
   }
+
+  showSongs(artist:any){
+    console.log(artist);
+  }
 }
 
 
