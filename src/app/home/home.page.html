@@ -1,41 +1,70 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content>
-    <h2>Artistas</h2>
-    <swiper-container [initialSlide]="0" [slidesPerView]="4" 
-    *ngIf="artists?.length"
-    >
-      
-      <swiper-slide *ngFor="let artist of artists">
-        <ion-avatar (click)="showSongs(artist)">
-          <img src="{{artist.image}}" />
-          <span>{{artist.name}}</span>
-        </ion-avatar>
-      </swiper-slide>
-    </swiper-container>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <h2>Artistas</h2>
+  <swiper-container [initialSlide]="0" [slidesPerView]="4" *ngIf="artists?.length">
+
+    <swiper-slide *ngFor="let artist of artists">
+      <ion-avatar (click)="showSongs(artist)">
+        <img src="{{artist.image}}" />
+        <span>{{artist.name}}</span>
+      </ion-avatar>
+    </swiper-slide>
+  </swiper-container>
 
 
-    <h2>Top Artistas</h2>
-    <swiper-container [initialSlide]="0" [slidesPerView]="4">
-    
-      <swiper-slide *ngFor="let localArtist of localArtists">
-        <ion-avatar>
-          <img src="{{localArtist['images'][1]['url']}}" />
-          <span>{{localArtist.name}}</span>
-        </ion-avatar>
-      </swiper-slide>
-    </swiper-container>
-  </ion-content>
-  <ion-footer>
-    <ion-text color="danger" *ngIf="!song.name">
-      <h2>Aqui aparecera nuestra canción</h2>
-    </ion-text>
-    <ion-text color="primary" *ngIf="song.name">
-      <h2>{{song.name}}</h2>
-    </ion-text>
-  </ion-footer>
+  <h2>Top Artistas</h2>
+  <swiper-container [initialSlide]="0" [slidesPerView]="4">
+
+    <swiper-slide *ngFor="let localArtist of localArtists">
+      <ion-avatar>
+        <img src="{{localArtist['images'][1]['url']}}" />
+        <span>{{localArtist.name}}</span>
+      </ion-avatar>
+    </swiper-slide>
+  </swiper-container>
+
+  <h2>Albumes</h2>
+  <swiper-container 
+  [initialSlide]="0"
+  [slidesPerView]="3"
+  *ngIf="albums?.length > 0"
+  >
+    <swiper-slide *ngFor="let album of albums">
+      <ion-avatar class="album-style" (click)="showAlbumSongs(album)">
+        <img src="{{album.image}}" />
+        <span>{{album.name}}</span>
+      </ion-avatar>
+    </swiper-slide>
+  </swiper-container>
+</ion-content>
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-start">{{parseTime(currentSong?.currentTime) || "0.00"}}</ion-col>
+      <ion-col class="ion-text-end">{{parseTime(currentSong?.duration)|| "0:00"}}</ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-progress-bar [value]="newTime"></ion-progress-bar>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="1">
+        <ion-icon name="heart"></ion-icon>
+      </ion-col>
+      <ion-col size="10" class="ion-text-center">
+        <ion-text>{{
+          song?.name || "Sin cancion seleccionada"
+        }}</ion-text>
+      </ion-col>
+      <ion-col size="1">
+        <ion-icon name="play" (click)="play()" *ngIf="!song?.playing"></ion-icon>
+        <ion-icon name="pause" (click)="pause()" *ngIf="song?.playing"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
