@@ -10,29 +10,35 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)">
+  <img src="../../assets/images/karaoke.png" alt="">
+  <form class="formRegister" [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)">
 
     <ion-item>
-      <ion-input label="Email" labelPlacement="floating" placeholder="name@example.com" formControlName="email">
+      <ion-icon name="mail-open-outline"></ion-icon>
+      <ion-input label="Correo" labelPlacement="floating" placeholder="name@example.com" formControlName="email">
       </ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input label="Password" labelPlacement="floating" placeholder="*******"
+      <ion-icon name="lock-open-outline"></ion-icon>
+      <ion-input label="Contraseña" labelPlacement="floating" placeholder="*******"
         formControlName="password"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input label="Name" labelPlacement="floating" placeholder="Nombre" formControlName="name"></ion-input>
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-input label="Nombre" labelPlacement="floating" placeholder="Nombre" formControlName="name"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input label="Last Name" labelPlacement="floating" placeholder="Apellido"
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-input label="Apellido" labelPlacement="floating" placeholder="Apellido"
         formControlName="last_name"></ion-input>
     </ion-item>
-
+    
     <ion-button type="submit" [disabled]="!registerForm.valid">
-      Registrarse
+      <ion-icon name="log-out-outline"></ion-icon>
+      REGISTRARSE
     </ion-button>
 
 

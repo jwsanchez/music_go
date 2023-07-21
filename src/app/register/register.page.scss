@@ -1,0 +1,27 @@
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.formRegister{
+    height: auto;
+    margin: 10% 0px 5%;
+    padding: 10%;
+    border-radius: 20px;
+    border:2px solid #fff;
+    background: linear-gradient(rgb(124, 124, 161), pink);
+}
+
+ion-icon{
+    margin-right: 2%;
+    padding-right: 10px;
+ }
+
+ion-item{
+    margin-bottom: 40px;
+}
+
+img{
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
