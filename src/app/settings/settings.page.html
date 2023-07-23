@@ -8,10 +8,23 @@
 </ion-header>
 
 <ion-content>
-  <ion-avatar (click)="takePhoto()">
+  <ion-avatar (click)="takePhoto()" class="center-avatar">
     <img [src]="userImage" *ngIf="!photo" alt="">
     <img [src]="photo" *ngIf="photo" alt="">
   </ion-avatar>
 
-  
+  <h1 class="ion-text-center">Jesus Sanchez</h1>
+  <h2 class="ion-text-center">Jwsanchez@pca.edu.co</h2>
+  <ion-grid>
+    <ion-row class="align-items-center ion-text-center row-header">
+      <ion-col>100</ion-col>
+      <ion-col>25</ion-col>
+      <ion-col>123</ion-col>
+    </ion-row>
+    <ion-row class="align-items-center ion-text-center ">
+      <ion-col>Artistas</ion-col>
+      <ion-col>Seguidores</ion-col>
+      <ion-col>Canciones</ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
