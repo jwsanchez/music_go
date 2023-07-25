@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Camera, CameraResultType, CameraSource} from '@capacitor/camera';
+import { UserService } from '../services/user.service';
 
 
 @Component({
@@ -11,9 +12,12 @@ import { Camera, CameraResultType, CameraSource} from '@capacitor/camera';
 export class SettingsPage implements OnInit {
 userImage = "/assets/images/settingsprofile.png";
 photo: any;
-  constructor(private sanitizer: DomSanitizer) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
+    this.userService.getUser(1).then(userData =>{
+      //TODO
+    });
   }
 
   async takePhoto(){
